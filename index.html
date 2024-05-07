@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
+        <script src="./script.js"></script>
+
+
+    <link rel="stylesheet" href="./Asset/bootstrap.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .navbar-nav .cart-badge {
+            position: absolute;
+            top: 10;
+            right: 0;
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+
+        .navbar-nav .cart-total {
+            margin-left: 10px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card .card-body {
+            padding: 15px;
+        }
+
+        .product-card .card-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-card .card-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .cart-container {
+            margin-top: 50px;
+        }
+
+        .cart-container h2 {
+            margin-bottom: 30px;
+        }
+
+        .cart-container .table {
+            width: 100%;
+        }
+
+        .cart-container .table th,
+        .cart-container .table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .cart-container .table th {
+            background-color: #ddd;
+        }
+
+        .cart-container .table .actions {
+            width: 100px;
+        }
+
+        .cart-container .table .actions button {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">E-commerce</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="#">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge"></span>
+                            <span class="cart-total"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+1" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">$100</p>
+                        <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+2" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">$200</p>
+                        <button class="btn btn-primary" onclick="addToCart(2)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">$300</p>
+                        <button class="btn btn-primary" onclick="addToCart(3)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-5">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 4</h5>
+                        <p class="card-text">$500</p>
+                        <button class="btn btn-primary" onclick="addToCart(4)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container cart-container" id="cart-container" style="display: none;">
+        <h2>Cart</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="text-end">Total:</td>
+                    <td class="cart-total"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-end">Delivery charges:</td>
+                    <td>$60</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-end">Grand total:</td>
+
+                    <td class="cart-total-value"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
