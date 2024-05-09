@@ -8,15 +8,15 @@
             let productPrice;
             switch (productId) {
             case 1:
-            productPrice = 100;
+            productPrice = 10;
             break;
             case 2:
-            productPrice = 200;
+            productPrice = 20;
             break;
             case 3:
-            productPrice = 300;
+            productPrice = 30;
             case 4:
-            productPrice = 500;
+            productPrice = 50;
             break;
             default:
             productPrice = 0;

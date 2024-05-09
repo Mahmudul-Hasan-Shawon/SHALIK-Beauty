@@ -5,88 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
-        <script src="./script.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./script.js"></script>
     <link rel="stylesheet" href="./Asset/bootstrap.min.css">
 
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .navbar-nav .cart-badge {
-            position: absolute;
-            top: 10;
-            right: 0;
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 50%;
-        }
-
-        .navbar-nav .cart-total {
-            margin-left: 10px;
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-card .card-body {
-            padding: 15px;
-        }
-
-        .product-card .card-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .product-card .card-text {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .cart-container {
-            margin-top: 50px;
-        }
-
-        .cart-container h2 {
-            margin-bottom: 30px;
-        }
-
-        .cart-container .table {
-            width: 100%;
-        }
-
-        .cart-container .table th,
-        .cart-container .table td {
-            border: 1px solid #ddd;
-            padding: 10px;
-        }
-
-        .cart-container .table th {
-            background-color: #ddd;
-        }
-
-        .cart-container .table .actions {
-            width: 100px;
-        }
-
-        .cart-container .table .actions button {
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
@@ -104,11 +32,14 @@
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
+                        <button class="cart" onclick="displayCart()">Display cart</button>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link position-relative" href="#">
-                            <i class="fas fa-shopping-cart"></i>
+                            <i class="fa-solid fa-cart-shopping" style="color: blueviolet;"></i>
                             <span class="cart-badge"></span>
                             <span class="cart-total"></span>
                         </a>
@@ -127,7 +58,7 @@
                     <img src="https://via.placeholder.com/300x200?text=Product+1" alt="Product 1">
                     <div class="card-body">
                         <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">$100</p>
+                        <p class="card-text">$10</p>
                         <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
                     </div>
                 </div>
@@ -137,7 +68,7 @@
                     <img src="https://via.placeholder.com/300x200?text=Product+2" alt="Product 2">
                     <div class="card-body">
                         <h5 class="card-title">Product 2</h5>
-                        <p class="card-text">$200</p>
+                        <p class="card-text">$20</p>
                         <button class="btn btn-primary" onclick="addToCart(2)">Add to Cart</button>
                     </div>
                 </div>
@@ -147,7 +78,7 @@
                     <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 3">
                     <div class="card-body">
                         <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">$300</p>
+                        <p class="card-text">$30</p>
                         <button class="btn btn-primary" onclick="addToCart(3)">Add to Cart</button>
                     </div>
                 </div>
@@ -157,7 +88,7 @@
                     <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 4">
                     <div class="card-body">
                         <h5 class="card-title">Product 4</h5>
-                        <p class="card-text">$500</p>
+                        <p class="card-text">$40</p>
                         <button class="btn btn-primary" onclick="addToCart(4)">Add to Cart</button>
                     </div>
                 </div>

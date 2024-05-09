@@ -1,0 +1,76 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-nav 
+.cart-badge {
+    position: absolute;
+    top: 10;
+    right: 10;
+    background-color: #008cff;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.navbar-nav .cart-total {
+    margin-left: 10px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card .card-body {
+    padding: 15px;
+}
+
+.product-card .card-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-card .card-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.cart-container {
+    margin-top: 50px;
+}
+
+.cart-container h2 {
+    margin-bottom: 30px;
+}
+
+.cart-container .table {
+    width: 100%;
+}
+
+.cart-container .table th,
+.cart-container .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.cart-container .table th {
+    background-color: #ddd;
+}
+
+.cart-container .table .actions {
+    width: 100px;
+}
+
+.cart-container .table .actions button {
+    width: 100%;
+}
