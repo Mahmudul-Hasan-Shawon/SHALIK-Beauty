@@ -12,7 +12,11 @@ function addToCart(productId) {
         5: 50,
         6: 60,
         7: 70,
-        8: 80
+        8: 80,
+        9: 90,
+        10: 100,
+        11: 110,
+        12: 120,
     };
     const productPrice = productPrices[productId] || 0;
     cart.push({ id: productId, price: productPrice, quantity: 1 });
