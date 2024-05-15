@@ -7,17 +7,24 @@
     <title>E-commerce Website</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css">
 
     <script src="./script.js"></script>
     <link rel="stylesheet" href="./Asset/bootstrap.min.css">
-
 </head>
 
 <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+    </style>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -49,15 +56,13 @@
         </div>
     </nav>
 
-
-
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Product+1" alt="Product 1">
+                    <img src="./Product Images/prd_1.jpg" alt="Product 1">
                     <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
+                        <h5 class="card-title" data-id="1">Cosrx Advance Snail 92 all in one cream (100ml)</h5>
                         <p class="card-text">$10</p>
                         <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
                     </div>
@@ -65,9 +70,9 @@
             </div>
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Product+2" alt="Product 2">
+                    <img src="./Product Images/prd_2.jpg" alt="Product 2">
                     <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
+                        <h5 class="card-title" data-id="2">Cosrx AHA/BHA Clarifying Treatment Toner</h5>
                         <p class="card-text">$20</p>
                         <button class="btn btn-primary" onclick="addToCart(2)">Add to Cart</button>
                     </div>
@@ -75,24 +80,15 @@
             </div>
             <div class="col-md-4">
                 <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 3">
+                    <img src="./Product Images/prd_3.jpg" alt="Product 3">
                     <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
+                        <h5 class="card-title" data-id="3">Cosrx Advance Snail 96 Mucin Power Essence</h5>
                         <p class="card-text">$30</p>
                         <button class="btn btn-primary" onclick="addToCart(3)">Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mt-5">
-                <div class="product-card">
-                    <img src="https://via.placeholder.com/300x200?text=Product+3" alt="Product 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 4</h5>
-                        <p class="card-text">$40</p>
-                        <button class="btn btn-primary" onclick="addToCart(4)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+            <!-- Product cards for other products -->
         </div>
     </div>
 
@@ -113,20 +109,26 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="4" class="text-end">Total:</td>
-                    <td class="cart-total"></td>
+                    <td colspan="4" class="text-end">Delivery charges:</td>
+                    <td class="delivery-charge">$60</td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-end">Delivery charges:</td>
-                    <td>$60</td>
+                    <td colspan="4" class="text-end">Total:</td>
+                    <td class="cart-total-value"></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="text-end">Grand total:</td>
-
                     <td class="cart-total-value"></td>
                 </tr>
             </tfoot>
         </table>
+        <div class="container delivery-container mt-3">
+            <label for="delivery-location">Delivery Location:</label>
+            <select id="delivery-location" onchange="updateDeliveryCharge()">
+                <option value="inside">Inside Dhaka</option>
+                <option value="outside">Outside Dhaka</option>
+            </select>
+        </div>
         <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button>
     </div>
 
@@ -137,6 +139,209 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+
+
+
+
+        
+
+
+
+        <div class="container">
+            <h1 class="text-center pt-5" style="color: #a230ff; font-weight:700;">SHALIK</h1>
+        </div>
+        <!-- HEADING END -->
+    
+        <div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
+            <!-- CARD : 1 START -->
+            <div class="row card pt-5 pb-5 p-4">
+                <!-- Question: 1 - YEAR -->
+                <div class="col">
+                    <label class="form-label"> YEAR <span class="text-danger">*</span></label>
+                    <select id="selectYear" class="form-select" aria-label="Select Year" required>
+                        <option selected disabled>Select Year</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                    </select>
+                </div>
+    
+                <!-- Question: 2 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label for="pick_date" class="form-label">
+                            Pick the date
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="date" class="form-control text-black" id="pick_date" required />
+                    </div>
+                </div>
+    
+                <!-- Question: 3 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label for="claim_number" class="form-label">
+                            Reading value
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="number" class="form-control text-black" id="Reading" required />
+                    </div>
+                </div>
+    
+                <!-- Question: 4 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label for="unit" class="form-label">
+                            Unit
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="number" class="form-control text-black" id="unit" required />
+                    </div>
+                </div>
+    
+                <!-- Question: 5 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label for="bill_month" class="form-label">
+                            Bill of month (TK)
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="number" class="form-control text-black" id="bill_month" required />
+                    </div>
+                </div>
+                <!-- Question: 6 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label for="fine" class="form-label">
+                            Fine (TK)
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="number" class="form-control text-black" id="fine" required />
+                    </div>
+                </div>
+                <!-- Question: 7 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label class="form-label">
+                            SMS Account no.
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select id="selectAccount" class="form-select" aria-label="Select Account" required>
+                            <option selected disabled>Select an account</option>
+                            <option value="SMS_acc_1">10690766355111</option>
+                            <option value="SMS_acc_2">1069086635511</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Question: 8 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label for="transaction_id" class="form-label">
+                            Transaction ID
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" class="form-control text-black" id="transactionId" required />
+                    </div>
+                </div>
+                <!-- Question: 9 -->
+                <div class="pt-4">
+                    <div class="col">
+                        <label class="form-label">
+                            Services
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select id="selectServices" class="form-select" aria-label="Select Service" required>
+                            <option selected disabled>Select an option</option>
+                            <option value="Service_bkash">Bkash</option>
+                            <option value="Service_rocket">Rocket</option>
+                            <option value="Service_nexus_pay">Nexus Pay</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- CRAD : 1 END -->
+    
+            
+    
+            <div class="row pt-5 p-2">
+                <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">SUBMIT</button>
+            </div>
+        </div>
+    
+        <!-- Bootstrap Bundle JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    
+        <script>
+            document.getElementById("submit_button").addEventListener("click", function (event) {
+                // Prevent default form submission
+                event.preventDefault();
+    
+                // Check if all required fields are filled
+                var allFieldsFilled = validateForm();
+    
+                // If all required fields are filled, proceed with form submission
+                if (allFieldsFilled) {
+                    doStuff(); // Call your submission function here
+                } else {
+                    // If any required field is empty, display a message to the user
+                    alert("Please fill all the required fields.");
+                }
+            });
+    
+            function validateForm() {
+                var allFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+                var allFieldsFilled = true;
+    
+                allFields.forEach(function (field) {
+                    if (!field.value.trim()) {
+                        allFieldsFilled = false;
+                        field.classList.add('is-invalid'); // Add a visual indication for missing fields
+                    } else {
+                        field.classList.remove('is-invalid'); // Remove the visual indication for filled fields
+                    }
+                });
+    
+                return allFieldsFilled;
+            }
+    
+            function doStuff() {
+                var year = document.getElementById("selectYear").value;
+                var pick_date = document.getElementById("pick_date").value;
+                var reading = document.getElementById("Reading").value;
+                var unit = document.getElementById("unit").value;
+                var bill_month = document.getElementById("bill_month").value;
+                var fine = document.getElementById("fine").value;
+                var account = document.getElementById("selectAccount").value;
+                var transaction_id = document.getElementById("transactionId").value;
+                var services = document.getElementById("selectServices").value;
+    
+                // Pass all form data including the selected issue to the server-side function
+                // Replace this line with your actual submission function
+                // google.script.run.userClicked(year, pick_date, reading, unit, bill_month, fine, account, transaction_id, services);
+    
+                // Clear the input fields after submission
+                document.getElementById("selectYear").value = "";
+                document.getElementById("pick_date").value = "";
+                document.getElementById("Reading").value = "";
+                document.getElementById("unit").value = "";
+                document.getElementById("bill_month").value = "";
+                document.getElementById("fine").value = "";
+                document.getElementById("selectAccount").value = "";
+                document.getElementById("transactionId").value = "";
+                document.getElementById("selectServices").value = "";
+            }
+        </script>
+
+
+
+
+
 
 </body>
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Cart Page Content -->
+    <div class="container mt-5">
+        <h1>Cart</h1>
+        <table class="table">
+            <!-- Cart table structure -->
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Cart items will be inserted here -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" class="text-end">Delivery charges:</td>
+                    <td id="delivery-charge">$60</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-end">Total:</td>
+                    <td id="cart-total"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-end">Grand total:</td>
+                    <td id="cart-total-value"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <!-- Button to continue shopping -->
+        <button class="btn btn-secondary" onclick="location.href='index.html';">Continue Shopping</button>
+    </div>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <!-- Include cart.js for cart functionality -->
+    <script src="cart.js"></script>
+</body>
+</html>
