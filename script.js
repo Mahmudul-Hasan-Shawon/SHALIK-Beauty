@@ -36,28 +36,26 @@ function updateCart() {
     displayCart();
 }
 
-function displayCart() {
-    $('#cart-container').show();
-    let cartItems = '';
+function updateCart() {
+    total = 0;
+    let subTotal = 0; // Initialize subtotal to zero
     for (let i = 0; i < cart.length; i++) {
-        let productName = $(`[data-id="${cart[i].id}"]`).text();
-        cartItems += `
-            <tr>
-                <td>${productName}</td>
-                <td>$${cart[i].price.toFixed(2)}</td>
-                <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)"></td>
-                <td>$${(cart[i].price * cart[i].quantity).toFixed(2)}</td>
-                <td>
-                    <button class="btn btn-danger" onclick="removeFromCart(${i})">Remove</button>
-                </td>
-            </tr>
-        `;
+        total += cart[i].price * cart[i].quantity;
+        subTotal += cart[i].price * cart[i].quantity; // Add each item's total price to subtotal
     }
-    $('#cart-items').html(cartItems);
+    let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
+    total += deliveryCharge;
+    $('.navbar-nav .cart-badge').text(cart.length);
+    $('.navbar-nav .cart-total').text('$' + total.toFixed(2));
     
-    // Update total in the frontend
-    $('.cart-total-value').text('$' + total.toFixed(2));
+    // Update subtotal in the frontend
+    $('.subtotal-value').text('$' + subTotal.toFixed(2));
+    
+    displayCart();
 }
+
+
+
 
 function updateQuantity(index, newQuantity) {
     cart[index].quantity = parseInt(newQuantity);

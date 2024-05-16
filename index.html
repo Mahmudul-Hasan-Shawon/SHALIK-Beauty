@@ -206,7 +206,7 @@
                     <th>Product</th>
                     <th>Price</th>
                     <th>Quantity</th>
-                    <th>Total</th>
+                    <th>Subtotal</th> <!-- Changed "Total" to "Subtotal" -->
                     <th></th>
                 </tr>
             </thead>
@@ -215,16 +215,19 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="4" class="text-end">Delivery charges:</td>
-                    <td class="delivery-charge">$60</td>
+                    <td colspan="3" class="text-end">Subtotal:</td> <!-- Updated colspan to 3 -->
+                    <td class="subtotal-value">$0.00</td> <!-- Added placeholder for subtotal -->
+                    <td></td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-end">Total:</td>
-                    <td class="cart-total-value"></td>
+                    <td colspan="3" class="text-end">Delivery charges:</td>
+                    <td class="delivery-charge">$60.00</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-end">Grand total:</td>
-                    <td class="cart-total-value"></td>
+                    <td colspan="3" class="text-end">Total:</td>
+                    <td class="cart-total-value">$0.00</td>
+                    <td></td>
                 </tr>
             </tfoot>
         </table>
@@ -237,6 +240,8 @@
         </div>
         <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button>
     </div>
+    
+    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -396,15 +401,16 @@
                     </select>
                 </div>
             </div>
+            <div class="row pt-5">
+                <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">PLACE
+                    ORDER</button>
+            </div>
         </div>
         <!-- CRAD : 1 END -->
 
 
 
-        <div class="row pt-5 p-2">
-            <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">PLACE
-                ORDER</button>
-        </div>
+        
     </div>
 
     <!-- Bootstrap Bundle JS -->
