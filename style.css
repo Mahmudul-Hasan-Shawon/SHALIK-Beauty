@@ -227,3 +227,13 @@ body {
     color: white;
 
 }
+
+.name{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.po{
+    padding-right: 20px;
+    justify-content: space-evenly;
+}
