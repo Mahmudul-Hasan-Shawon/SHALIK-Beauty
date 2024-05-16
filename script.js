@@ -46,10 +46,10 @@ function updateCart() {
     let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
     total += deliveryCharge;
     $('.navbar-nav .cart-badge').text(cart.length);
-    $('.navbar-nav .cart-total').text('$' + total.toFixed(2));
+    $('.navbar-nav .cart-total').text(total.toFixed(0) + ' ৳');
     
     // Update subtotal in the frontend
-    $('.subtotal-value').text('$' + subTotal.toFixed(2));
+    $('.subtotal-value').text(subTotal.toFixed(0) + ' ৳');
     
     displayCart();
 }
@@ -76,7 +76,7 @@ function hideCart() {
 function updateDeliveryCharge() {
     let selectedLocation = $('#delivery-location').val();
     let deliveryCharge = (selectedLocation === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
-    $('.delivery-charge').text('$' + deliveryCharge.toFixed(2));
+    $('.delivery-charge').text(deliveryCharge.toFixed(2) + ' ৳');
     updateCart();
 }
 
@@ -94,9 +94,9 @@ function displayCart() {
         cartItems += `
             <tr>
                 <td>${productName}</td>
-                <td>$${cart[i].price.toFixed(2)}</td>
+                <td>${cart[i].price.toFixed(0)} ৳</td>
                 <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)"></td>
-                <td>$${(cart[i].price * cart[i].quantity).toFixed(2)}</td>
+                <td>${(cart[i].price * cart[i].quantity).toFixed(0)} ৳</td>
                 <td>
                     <button class="btn btn-danger" onclick="removeFromCart(${i})">Remove</button>
                 </td>
@@ -106,5 +106,5 @@ function displayCart() {
     $('#cart-items').html(cartItems);
     
     // Update total in the frontend
-    $('.cart-total-value').text('$' + total.toFixed(2));
+    $('.cart-total-value').text(total.toFixed(0) + ' ৳' );
 }
