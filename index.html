@@ -231,14 +231,14 @@
                 </tr>
             </tfoot>
         </table>
-        <div class="container delivery-container mt-3">
+        <!-- <div class="container delivery-container mt-3">
             <label for="delivery-location">Delivery Location:</label>
             <select id="delivery-location" onchange="updateDeliveryCharge()">
                 <option value="inside">Inside Dhaka</option>
                 <option value="outside">Outside Dhaka</option>
             </select>
         </div>
-        <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button>
+        <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button> -->
     </div>
 
 
@@ -267,7 +267,7 @@
 
 
         <!-- CARD : 1 START -->
-        <div class="row card pt-5 pb-5 p-4">
+        <div class="row card_place_order pt-5 pb-5 p-4">
 
 
             <!-- Name -->
@@ -308,6 +308,27 @@
 
 
                 <div class="row row-cols-4 gy-4 pt-4">
+                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                        <!-- <label for="delivery-location">Delivery Location:</label> -->
+                        <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
+                            <option value="inside">Inside Dhaka</option>
+                            <option value="outside">Outside Dhaka</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                        <button class="button" onclick="hideCart()">Continue Shopping</button>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="row row-cols-4 gy-4 pt-5">
                     <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
                         <label class="form-label">
                             Services
@@ -333,8 +354,6 @@
 
 
 
-
-
                     <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
                         <label for="transaction_id" class="form-label">
                             Transaction ID
@@ -345,6 +364,8 @@
                     </div>
 
                 </div>
+
+
 
 
 
