@@ -146,10 +146,7 @@ body {
     border-radius: 5px;
     height: 50px;
     transition: ease-in-out 0.3s;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+    
 }
 
 .button-submit:hover {
@@ -159,10 +156,7 @@ body {
     border-radius: 5px;
     height: 50px;
     transition: ease-in-out 0.3s;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
+ 
 }
 
 .card {
@@ -236,4 +230,10 @@ body {
 .po{
     padding-right: 20px;
     justify-content: space-evenly;
+}
+
+
+/* styles.css */
+#account_number, #transactionId::placeholder {
+    opacity: 0.5;
 }

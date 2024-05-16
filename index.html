@@ -292,7 +292,7 @@
                 <div class="row row-cols-4 gy-4 pt-4">
                     <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
                         <label for="phone_number" class="form-label">
-                            Phone number
+                            Contact number
                             <span class="text-danger">*</span>
                         </label>
                         <input type="text" class="form-control text-black" id="first_name" required />
@@ -308,30 +308,50 @@
 
 
                 <div class="row row-cols-4 gy-4 pt-4">
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <label for="transaction_id" class="form-label">
-                        Transaction ID
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="text" class="form-control text-black" id="transactionId" required />
+                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                        <label class="form-label">
+                            Services
+                            <span class="text-danger">*</span>
+                        </label>
+                        <select id="selectServices" class="form-select" aria-label="Select Service" required>
+                            <option selected disabled>Select an option</option>
+                            <option value="Service_CashOnDelivery">Cash On Delivery</option>
+                            <option value="Service_bkash">Bkash</option>
+                            <option value="Service_rocket">Rocket</option>
+                            <option value="Service_nexus_pay">Nexus Pay</option>
+                        </select>
                     </div>
 
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <label class="form-label">
-                        Services
-                        <span class="text-danger">*</span>
-                    </label>
-                    <select id="selectServices" class="form-select" aria-label="Select Service" required>
-                        <option selected disabled>Select an option</option>
-                        <option value="Service_CashOnDelivery">Cash On Delivery</option>
-                        <option value="Service_bkash">Bkash</option>
-                        <option value="Service_rocket">Rocket</option>
-                        <option value="Service_nexus_pay">Nexus Pay</option>
-                    </select>
+                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                        <label for="Address" class="form-label">
+                            Account number
+                            <!-- <span class="text-danger"></span> -->
+                        </label>
+                        <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX"
+                            id="account_number" required />
                     </div>
+
+
+
+
+
+                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                        <label for="transaction_id" class="form-label">
+                            Transaction ID
+                            <!-- <span class="text-danger">*</span> -->
+                        </label>
+                        <input type="text" placeholder="sd" class="form-control text-black" id="transactionId"
+                            required />
+                    </div>
+
                 </div>
 
-                
+        
+
+
+
+
+
             </div>
 
 
@@ -350,38 +370,13 @@
 
 
 
-            
 
 
 
-            <!-- Question: 1 - YEAR -->
-            <!-- <div class="col">
-                    <label class="form-label"> YEAR <span class="text-danger">*</span></label>
-                    <select id="selectYear" class="form-select" aria-label="Select Year" required>
-                        <option selected disabled>Select Year</option>
-                        <option value="2020">2020</option>
-                        <option value="2021">2021</option>
-                        <option value="2022">2022</option>
-                        <option value="2023">2023</option>
-                        <option value="2024">2024</option>
-                        <option value="2025">2025</option>
-                        <option value="2026">2026</option>
-                    </select>
-                </div> -->
 
-            <!-- Question: 2 -->
+
+
             <!-- <div class="pt-4">
-                    <div class="col">
-                        <label for="pick_date" class="form-label">
-                            Pick the date
-                            <span class="text-danger">*</span>
-                        </label>
-                        <input type="date" class="form-control text-black" id="pick_date" required />
-                    </div>
-                </div> -->
-
-            <!-- Question: 3 -->
-            <div class="pt-4">
                 <div class="col">
                     <label for="claim_number" class="form-label">
                         Reading value
@@ -391,7 +386,7 @@
                 </div>
             </div>
 
-            <!-- Question: 4 -->
+         
             <div class="pt-4">
                 <div class="col">
                     <label for="unit" class="form-label">
@@ -402,7 +397,7 @@
                 </div>
             </div>
 
-            <!-- Question: 5 -->
+     
             <div class="pt-4">
                 <div class="col">
                     <label for="bill_month" class="form-label">
@@ -412,7 +407,7 @@
                     <input type="number" class="form-control text-black" id="bill_month" required />
                 </div>
             </div>
-            <!-- Question: 6 -->
+        
             <div class="pt-4">
                 <div class="col">
                     <label for="fine" class="form-label">
@@ -421,23 +416,42 @@
                     </label>
                     <input type="number" class="form-control text-black" id="fine" required />
                 </div>
-            </div>
-            <!-- Question: 7 -->
-            <div class="pt-4">
+            </div> -->
+
+
+            <!-- <div class="pt-4">
                 <div class="col">
                     <label class="form-label">
                         SMS Account no.
                         <span class="text-danger">*</span>
                     </label>
-                    <select id="selectAccount" class="form-select" aria-label="Select Account" required>
+
+                    <select id="selectAccount" class="form-select form-label" aria-label="Select Account" required>
                         <option selected disabled>Select an account</option>
                         <option value="SMS_acc_1">10690766355111</option>
                         <option value="SMS_acc_2">1069086635511</option>
                     </select>
+
+                    <script>
+                        $(document).ready(function() {
+                            $('#selectAccount').select2();
+                        });
+                    </script>
+
+
+                    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+                        rel="stylesheet" />
+
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
+
                 </div>
-            </div>
-            <!-- Question: 8 -->
-            <div class="pt-4">
+            </div> -->
+
+
+            <!-- <div class="pt-4">
                 <div class="col">
                     <label for="transaction_id" class="form-label">
                         Transaction ID
@@ -446,7 +460,6 @@
                     <input type="text" class="form-control text-black" id="transactionId" required />
                 </div>
             </div>
-            <!-- Question: 9 -->
             <div class="pt-4">
                 <div class="col">
                     <label class="form-label">
@@ -460,13 +473,16 @@
                         <option value="Service_nexus_pay">Nexus Pay</option>
                     </select>
                 </div>
-            </div>
+            </div> -->
+
             <div class="row pt-5">
                 <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">PLACE
                     ORDER</button>
             </div>
+
+
+
         </div>
-        <!-- CRAD : 1 END -->
 
 
 
