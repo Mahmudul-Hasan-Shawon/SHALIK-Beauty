@@ -24,17 +24,17 @@ function addToCart(productId) {
 }
 
 
-function updateCart() {
-    total = 0;
-    for (let i = 0; i < cart.length; i++) {
-        total += cart[i].price * cart[i].quantity;
-    }
-    let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
-    total += deliveryCharge;
-    $('.navbar-nav .cart-badge').text(cart.length);
-    $('.navbar-nav .cart-total').text('$' + total.toFixed(2));
-    displayCart();
-}
+// function updateCart() {
+//     total = 0;
+//     for (let i = 0; i < cart.length; i++) {
+//         total += cart[i].price * cart[i].quantity;
+//     }
+//     let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
+//     total += deliveryCharge;
+//     $('.navbar-nav .cart-badge').text(cart.length);
+//     $('.navbar-nav .cart-total').text('$' + total.toFixed(2));
+//     displayCart();
+// }
 
 function updateCart() {
     total = 0;
