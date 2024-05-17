@@ -368,6 +368,8 @@ body {
     font-size: 4rem;
     transition: ease-in-out 0.4s;
     
+
+    
  }
 
  
@@ -386,4 +388,10 @@ body {
 
  .service{
     background-color: #f9f2ff;
+ }
+
+ .payment-services-logo{
+    width: 85px;
+    height:80px;
+
  }
