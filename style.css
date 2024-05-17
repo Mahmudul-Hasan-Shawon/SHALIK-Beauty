@@ -297,12 +297,13 @@ body {
 
 .navbar{
     background-color: #ffffff;
-    box-shadow: rgba(27, 31, 35, 0.089) 0px 5px 10px -5px, rgba(255, 255, 255, 0.185) 0px 1px 0px inset;
+    box-shadow: rgba(27, 31, 35, 0.089) 0px 5px 10px -5px, rgba(24, 5, 49, 0.185) 0px 1px 0px inset;
 }
 
 
 .footer{
-    background-color: rgb(247, 240, 255);
+    background-color: rgb(21, 1, 44);
+    color: white;
 }
 
 
@@ -363,7 +364,7 @@ body {
  
  
  .icon{
-    color: #fd408f;
+    color: #410981;
     font-size: 4rem;
     transition: ease-in-out 0.4s;
     
@@ -382,3 +383,7 @@ body {
  
  
  
+
+ .service{
+    background-color: #f9f2ff;
+ }
