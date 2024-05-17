@@ -411,28 +411,15 @@
 
 
             <div class="row row-cols-4 gy-4 pt-4">
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <!-- <label for="delivery-location">Delivery Location:</label> -->
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
+                    <label class="form-label" for="delivery-location">Delivery Location:</label>
                     <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
                         <option value="inside">Inside Dhaka</option>
                         <option value="outside">Outside Dhaka</option>
                     </select>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <button class="button" onclick="hideCart()">Continue Shopping</button>
-                </div>
-            </div>
 
-
-
-
-
-
-
-
-
-            <div class="row row-cols-4 gy-4 pt-5">
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                     <label class="form-label">
                         Services
                         <span class="text-danger">*</span>
@@ -446,7 +433,7 @@
                     </select>
                 </div>
 
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                     <label for="Address" class="form-label">
                         Account number
                         <!-- <span class="text-danger"></span> -->
@@ -455,9 +442,7 @@
                         required />
                 </div>
 
-
-
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                     <label for="transaction_id" class="form-label">
                         Transaction ID
                         <!-- <span class="text-danger">*</span> -->
@@ -465,17 +450,27 @@
                     <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId"
                         required />
                 </div>
-
+                
             </div>
 
 
+
+
+
+
+
+
+
+
+
             <div class="row row-cols-4 gy-4 pt-5">
+             
 
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
-
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <button class="button" onclick="hideCart()">Continue Shopping</button>
                 </div>
 
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4 pt-5">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
                     <button type="submit" class="button" style="font-weight: 500;">PLACE ORDER</button>
                 </div>
             </div>
