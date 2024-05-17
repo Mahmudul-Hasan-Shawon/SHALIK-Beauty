@@ -101,7 +101,7 @@ function displayCart() {
                     <button class="btn btn-danger" onclick="removeFromCart(${i})">Remove</button>
                 </td>
             </tr>
-        `;
+        `;  
     }
     $('#cart-items').html(cartItems);
     
