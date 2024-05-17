@@ -48,23 +48,22 @@
         }
     </style>
 
-    <nav class="navbar navbar-expand-lg  sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top bg-light">
         <div class="container">
-            <!-- Left side with Home and Contact links (hidden on mobile) -->
-            <!-- <div class="d-none d-lg-flex">
-                <a class="navbar-brand" href="#">Home</a>
-                <a class="navbar-brand ms-3" href="#">Contact</a>
-            </div> -->
+            <!-- Toggler Button for mobile view -->
+            <button class="navbar-toggler me-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
             <!-- Middle (Company Logo) -->
-            <div class="d-flex justify-content-start flex-grow-0">
+            <div class="d-flex justify-content-center flex-grow-0">
                 <a class="navbar-brand mx-auto" href="#">
                     <img src="./logo/shalik.svg" alt="SHALIK" style="height: 40px;">
                 </a>
             </div>
-
-
-            <!-- Right side with Cart Icon and Hamburger Menu (visible on mobile) -->
-            <div class="d-flex align-items-center">
+    
+            <!-- Right side with Cart Icon -->
+            <div class="d-flex align-items-center ms-auto">
                 <!-- Cart Icon with Badge -->
                 <a class="nav-link position-relative me-3" href="#">
                     <i class="bi bi-cart"></i>
@@ -78,18 +77,7 @@
                 <div>
                     <span class="cart-total">0.00 ৳</span>
                 </div>
-            
-                <!-- Navbar Toggler Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
             </div>
-            
-
-
-
-
         </div>
     </nav>
 
