@@ -10,6 +10,17 @@
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons (for the cart and cancel icons) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+
+
+
+
+
     <link rel="stylesheet" href="style.css">
 
     <script src="./script.js"></script>
@@ -27,7 +38,100 @@
     </style>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <style>
+        .offcanvas-start {
+            width: 250px;
+        }
+
+        .offcanvas-header .btn-close {
+            font-size: 1.5rem;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg  sticky-top">
+        <div class="container">
+            <!-- Left side with Home and Contact links (hidden on mobile) -->
+            <!-- <div class="d-none d-lg-flex">
+                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand ms-3" href="#">Contact</a>
+            </div> -->
+            <!-- Middle (Company Logo) -->
+            <div class="d-flex justify-content-start flex-grow-0">
+                <a class="navbar-brand mx-auto" href="#">
+                    <img src="./logo/shalik.svg" alt="SHALIK" style="height: 40px;">
+                </a>
+            </div>
+
+
+            <!-- Right side with Cart Icon and Hamburger Menu (visible on mobile) -->
+            <div class="d-flex align-items-center">
+                <!-- Cart Icon with Badge -->
+                <a class="nav-link position-relative me-3" href="#">
+                    <i class="bi bi-cart"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        <span class="cart-badge">0</span>
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                </a>
+            
+                <!-- Cart Total Display -->
+                <div>
+                    <span class="cart-total">0.00 ৳</span>
+                </div>
+            
+                <!-- Navbar Toggler Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+
+
+
+
+        </div>
+    </nav>
+
+    <!-- Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                    class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SHALIK GLOW Corner</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -55,183 +159,183 @@
                 </a>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
 
 
 
 
-    <div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5">
 
 
-        <!--  -->
-        <div class="container pt-5 pb-5">
-            <div class="row row-cols-4 gy-4 pt-5">
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_1.jpg" alt="Product 1">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="1">Cosrx Advance Snail 92 all in one cream (100ml)</h5>
-                            <p class="card-text text-end">10 ৳</p>
-                            <button class="button" onclick="addToCart(1)">Add to Cart</button>
-                        </div>
+    <!--  -->
+    <div class="container pt-5 pb-5">
+        <div class="row row-cols-4 gy-4 pt-5">
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_1.jpg" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="1">Cosrx Advance Snail 92 all in one cream (100ml)</h5>
+                        <p class="card-text text-end">10 ৳</p>
+                        <button class="button" onclick="addToCart(1)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_2.jpg" alt="Product 2">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="2">Cosrx AHA/BHA Clarifying Treatment Toner</h5>
-                            <p class="card-text text-end">20 ৳</p>
-                            <button class="button " onclick="addToCart(2)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_2.jpg" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="2">Cosrx AHA/BHA Clarifying Treatment Toner</h5>
+                        <p class="card-text text-end">20 ৳</p>
+                        <button class="button " onclick="addToCart(2)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_3.jpg" alt="Product 3">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="3">Cosrx Advance Snail 96 Mucin Power Essence</h5>
-                            <p class="card-text text-end">30 ৳</p>
-                            <button class="button" onclick="addToCart(3)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_3.jpg" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="3">Cosrx Advance Snail 96 Mucin Power Essence</h5>
+                        <p class="card-text text-end">30 ৳</p>
+                        <button class="button" onclick="addToCart(3)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100 h-100" id="bor">
-                        <img src="./Product Images/prd_4.jpg" alt="Product 4">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="4">Cosrx The Vitamin C 23 Serum</h5>
-                            <p class="card-text text-end">40 ৳</p>
-                            <button class="button" onclick="addToCart(4)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100 h-100" id="bor">
+                    <img src="./Product Images/prd_4.jpg" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="4">Cosrx The Vitamin C 23 Serum</h5>
+                        <p class="card-text text-end">40 ৳</p>
+                        <button class="button" onclick="addToCart(4)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_5.jpg" alt="Product 5">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="5">Cosrx Salicylic Acid Daily Gentle Cleanser </h5>
-                            <p class="card-text text-end">50 ৳</p>
-                            <button class="button" onclick="addToCart(5)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_5.jpg" alt="Product 5">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="5">Cosrx Salicylic Acid Daily Gentle Cleanser </h5>
+                        <p class="card-text text-end">50 ৳</p>
+                        <button class="button" onclick="addToCart(5)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_6.jpg" alt="Product 6">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="6"> Missha Ultra Hyalron Foaming Cleanser </h5>
-                            <p class="card-text text-end">60 ৳</p>
-                            <button class="button" onclick="addToCart(6)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_6.jpg" alt="Product 6">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="6"> Missha Ultra Hyalron Foaming Cleanser </h5>
+                        <p class="card-text text-end">60 ৳</p>
+                        <button class="button" onclick="addToCart(6)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_7.jpg" alt="Product 7">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="7"> Missha M B.B Boomer </h5>
-                            <p class="card-text text-end">70 ৳</p>
-                            <button class="button" onclick="addToCart(7)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_7.jpg" alt="Product 7">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="7"> Missha M B.B Boomer </h5>
+                        <p class="card-text text-end">70 ৳</p>
+                        <button class="button" onclick="addToCart(7)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_8.jpg" alt="Product 8">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="8"> Missha M Perfect Cover B.B Cream </h5>
-                            <p class="card-text text-end">80 ৳</p>
-                            <button class="button" onclick="addToCart(8)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_8.jpg" alt="Product 8">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="8"> Missha M Perfect Cover B.B Cream </h5>
+                        <p class="card-text text-end">80 ৳</p>
+                        <button class="button" onclick="addToCart(8)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_9.webp" alt="Product 9">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="9"> 3W Clinic Intensive UV Sunblock Cream SPF50+/PA+++ </h5>
-                            <p class="card-text text-end">90 ৳</p>
-                            <button class="button" onclick="addToCart(9)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_9.webp" alt="Product 9">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="9"> 3W Clinic Intensive UV Sunblock Cream SPF50+/PA+++ </h5>
+                        <p class="card-text text-end">90 ৳</p>
+                        <button class="button" onclick="addToCart(9)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_10.jpg" alt="Product 10">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="10"> TIAM Daily Sun Care Cream SPF50+ PA++++ </h5>
-                            <p class="card-text text-end">100 ৳</p>
-                            <button class="button" onclick="addToCart(10)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_10.jpg" alt="Product 10">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="10"> TIAM Daily Sun Care Cream SPF50+ PA++++ </h5>
+                        <p class="card-text text-end">100 ৳</p>
+                        <button class="button" onclick="addToCart(10)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_11.jpg" alt="Product 11">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="11"> Cosrx advance snail 92 all in one cream (Tube) </h5>
-                            <p class="card-text text-end">110 ৳</p>
-                            <button class="button" onclick="addToCart(11)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_11.jpg" alt="Product 11">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="11"> Cosrx advance snail 92 all in one cream (Tube) </h5>
+                        <p class="card-text text-end">110 ৳</p>
+                        <button class="button" onclick="addToCart(11)">Add to Cart</button>
                     </div>
                 </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
-                    <div class="product-card card h-100" id="bor">
-                        <img src="./Product Images/prd_12.webp" alt="Product 12">
-                        <div class="card-body">
-                            <h5 class="card-title" data-id="12"> AXIS-Y Dark Spot Correcting Glow Serum </h5>
-                            <p class="card-text text-end">120 ৳</p>
-                            <button class="button" onclick="addToCart(12)">Add to Cart</button>
-                        </div>
+            </div>
+            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-3">
+                <div class="product-card card h-100" id="bor">
+                    <img src="./Product Images/prd_12.webp" alt="Product 12">
+                    <div class="card-body">
+                        <h5 class="card-title" data-id="12"> AXIS-Y Dark Spot Correcting Glow Serum </h5>
+                        <p class="card-text text-end">120 ৳</p>
+                        <button class="button" onclick="addToCart(12)">Add to Cart</button>
                     </div>
                 </div>
-
             </div>
 
         </div>
 
-
-        <!--  -->
-
-
     </div>
 
-    <div class="container cart-container" id="cart-container" style="display: none;">
-        <h2>Cart</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th> <!-- Changed "Total" to "Subtotal" -->
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Cart items will be inserted here -->
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="3" class="text-end">Subtotal:</td> <!-- Updated colspan to 3 -->
-                    <td class="subtotal-value">0 ৳</td> <!-- Added placeholder for subtotal -->
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="text-end">Delivery charges:</td>
-                    <td class="delivery-charge">60 ৳</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="text-end">Total:</td>
-                    <td class="cart-total-value">0 ৳</td>
-                    <td></td>
-                </tr>
-            </tfoot>
-        </table>
-        <!-- <div class="container delivery-container mt-3">
+
+    <!--  -->
+
+
+</div>
+
+<div class="container cart-container" id="cart-container" style="display: none;">
+    <h2>Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th> <!-- Changed "Total" to "Subtotal" -->
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="cart-items">
+            <!-- Cart items will be inserted here -->
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-end">Subtotal:</td> <!-- Updated colspan to 3 -->
+                <td class="subtotal-value">0 ৳</td> <!-- Added placeholder for subtotal -->
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-end">Delivery charges:</td>
+                <td class="delivery-charge">60 ৳</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="text-end">Total:</td>
+                <td class="cart-total-value">0 ৳</td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+    <!-- <div class="container delivery-container mt-3">
             <label for="delivery-location">Delivery Location:</label>
             <select id="delivery-location" onchange="updateDeliveryCharge()">
                 <option value="inside">Inside Dhaka</option>
@@ -239,152 +343,84 @@
             </select>
         </div>
         <button class="btn btn-secondary" onclick="hideCart()">Continue Shopping</button> -->
-    </div>
+</div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
 
 
 
 
 
-    <div class="container-fluid" style="background-color: rgb(255, 255, 255);">
-        <h1 class="text-center shalik_shine pt-5">SHALIK GLOW CORNER</h1>
-    </div>
-    <!-- HEADING END -->
-
-    <div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
 
 
-        <!-- CARD : 1 START -->
-        <div class="row card_place_order pt-5 pb-5 p-4">
+
+<div class="container-fluid" style="background-color: rgb(255, 255, 255);">
+    <h1 class="text-center shalik_shine pt-5">SHALIK GLOW CORNER</h1>
+</div>
+<!-- HEADING END -->
+
+<div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
 
 
-            <!-- Name -->
-            <div class="container pb-5">
-                <div class="row row-cols-4 gy-4 pt-5">
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <label for="first_name" class="form-label">
-                            First Name
-                            <span class="text-danger">*</span>
-                        </label>
-                        <input type="text" class="form-control text-black" id="first_name" required />
-                    </div>
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <label for="first_name" class="form-label">
-                            Last Name
-                            <span class="text-danger">*</span>
-                        </label>
-                        <input type="text" class="form-control text-black" id="first_name" required />
-                    </div>
+    <!-- CARD : 1 START -->
+    <div class="row card_place_order pt-5 pb-5 p-4">
+
+
+        <!-- Name -->
+        <div class="container pb-5">
+            <div class="row row-cols-4 gy-4 pt-5">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <label for="first_name" class="form-label">
+                        First Name
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control text-black" id="first_name" required />
                 </div>
-
-                <div class="row row-cols-4 gy-4 pt-4">
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <label for="phone_number" class="form-label">
-                            Contact number
-                            <span class="text-danger">*</span>
-                        </label>
-                        <input type="text" class="form-control text-black" id="first_name" required />
-                    </div>
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <label for="Address" class="form-label">
-                            Address
-                            <span class="text-danger">*</span>
-                        </label>
-                        <input type="text" class="form-control text-black" id="first_name" required />
-                    </div>
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <label for="first_name" class="form-label">
+                        Last Name
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control text-black" id="first_name" required />
                 </div>
+            </div>
 
-
-                <div class="row row-cols-4 gy-4 pt-4">
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <!-- <label for="delivery-location">Delivery Location:</label> -->
-                        <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
-                            <option value="inside">Inside Dhaka</option>
-                            <option value="outside">Outside Dhaka</option>
-                        </select>
-                    </div>
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                        <button class="button" onclick="hideCart()">Continue Shopping</button>
-                    </div>
+            <div class="row row-cols-4 gy-4 pt-4">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <label for="phone_number" class="form-label">
+                        Contact number
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control text-black" id="first_name" required />
                 </div>
-
-
-
-
-
-
-
-
-
-                <div class="row row-cols-4 gy-4 pt-5">
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
-                        <label class="form-label">
-                            Services
-                            <span class="text-danger">*</span>
-                        </label>
-                        <select id="selectServices" class="form-select" aria-label="Select Service" required>
-                            <option selected disabled>Select an option</option>
-                            <option value="Service_CashOnDelivery">Cash On Delivery</option>
-                            <option value="Service_bkash">Bkash</option>
-                            <option value="Service_rocket">Rocket</option>
-                            <option value="Service_nexus_pay">Nexus Pay</option>
-                        </select>
-                    </div>
-
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
-                        <label for="Address" class="form-label">
-                            Account number
-                            <!-- <span class="text-danger"></span> -->
-                        </label>
-                        <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX"
-                            id="account_number" required />
-                    </div>
-
-
-
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
-                        <label for="transaction_id" class="form-label">
-                            Transaction ID
-                            <!-- <span class="text-danger">*</span> -->
-                        </label>
-                        <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId"
-                            required />
-                    </div>
-
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <label for="Address" class="form-label">
+                        Address
+                        <span class="text-danger">*</span>
+                    </label>
+                    <input type="text" class="form-control text-black" id="first_name" required />
                 </div>
+            </div>
 
 
-                <div class="row row-cols-4 gy-4 pt-5">
-                    
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
-                        
-                    </div>
-
-                    <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4 pt-5">
-                        <button type="submit" class="button" style="font-weight: 500;">PLACE ORDER</button>
-                    </div>
+            <div class="row row-cols-4 gy-4 pt-4">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <!-- <label for="delivery-location">Delivery Location:</label> -->
+                    <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
+                        <option value="inside">Inside Dhaka</option>
+                        <option value="outside">Outside Dhaka</option>
+                    </select>
                 </div>
-
-
-
-
-
-
-
-
-
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                    <button class="button" onclick="hideCart()">Continue Shopping</button>
+                </div>
             </div>
 
 
@@ -395,6 +431,64 @@
 
 
 
+            <div class="row row-cols-4 gy-4 pt-5">
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                    <label class="form-label">
+                        Services
+                        <span class="text-danger">*</span>
+                    </label>
+                    <select id="selectServices" class="form-select" aria-label="Select Service" required>
+                        <option selected disabled>Select an option</option>
+                        <option value="Service_CashOnDelivery">Cash On Delivery</option>
+                        <option value="Service_bkash">Bkash</option>
+                        <option value="Service_rocket">Rocket</option>
+                        <option value="Service_nexus_pay">Nexus Pay</option>
+                    </select>
+                </div>
+
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                    <label for="Address" class="form-label">
+                        Account number
+                        <!-- <span class="text-danger"></span> -->
+                    </label>
+                    <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX" id="account_number"
+                        required />
+                </div>
+
+
+
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+                    <label for="transaction_id" class="form-label">
+                        Transaction ID
+                        <!-- <span class="text-danger">*</span> -->
+                    </label>
+                    <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId"
+                        required />
+                </div>
+
+            </div>
+
+
+            <div class="row row-cols-4 gy-4 pt-5">
+
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4">
+
+                </div>
+
+                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-4 pt-5">
+                    <button type="submit" class="button" style="font-weight: 500;">PLACE ORDER</button>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
 
 
 
@@ -409,7 +503,16 @@
 
 
 
-            <!-- <div class="pt-4">
+
+
+
+
+
+
+
+
+
+        <!-- <div class="pt-4">
                 <div class="col">
                     <label for="claim_number" class="form-label">
                         Reading value
@@ -452,7 +555,7 @@
             </div> -->
 
 
-            <!-- <div class="pt-4">
+        <!-- <div class="pt-4">
                 <div class="col">
                     <label class="form-label">
                         SMS Account no.
@@ -484,7 +587,7 @@
             </div> -->
 
 
-            <!-- <div class="pt-4">
+        <!-- <div class="pt-4">
                 <div class="col">
                     <label for="transaction_id" class="form-label">
                         Transaction ID
@@ -507,85 +610,85 @@
                     </select>
                 </div>
             </div> -->
-<!-- 
+        <!-- 
             <div class="row pt-5">
                 <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">PLACE ORDER</button>
             </div> -->
 
 
 
-        </div>
-
-
-
-
     </div>
 
-    <!-- Bootstrap Bundle JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 
-    <script>
-        document.getElementById("submit_button").addEventListener("click", function (event) {
-            // Prevent default form submission
-            event.preventDefault();
 
-            // Check if all required fields are filled
-            var allFieldsFilled = validateForm();
 
-            // If all required fields are filled, proceed with form submission
-            if (allFieldsFilled) {
-                doStuff(); // Call your submission function here
+</div>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<script>
+    document.getElementById("submit_button").addEventListener("click", function (event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Check if all required fields are filled
+        var allFieldsFilled = validateForm();
+
+        // If all required fields are filled, proceed with form submission
+        if (allFieldsFilled) {
+            doStuff(); // Call your submission function here
+        } else {
+            // If any required field is empty, display a message to the user
+            alert("Please fill all the required fields.");
+        }
+    });
+
+    function validateForm() {
+        var allFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+        var allFieldsFilled = true;
+
+        allFields.forEach(function (field) {
+            if (!field.value.trim()) {
+                allFieldsFilled = false;
+                field.classList.add('is-invalid'); // Add a visual indication for missing fields
             } else {
-                // If any required field is empty, display a message to the user
-                alert("Please fill all the required fields.");
+                field.classList.remove('is-invalid'); // Remove the visual indication for filled fields
             }
         });
 
-        function validateForm() {
-            var allFields = document.querySelectorAll('input[required], select[required], textarea[required]');
-            var allFieldsFilled = true;
+        return allFieldsFilled;
+    }
 
-            allFields.forEach(function (field) {
-                if (!field.value.trim()) {
-                    allFieldsFilled = false;
-                    field.classList.add('is-invalid'); // Add a visual indication for missing fields
-                } else {
-                    field.classList.remove('is-invalid'); // Remove the visual indication for filled fields
-                }
-            });
+    function doStuff() {
+        var year = document.getElementById("selectYear").value;
+        var pick_date = document.getElementById("pick_date").value;
+        var reading = document.getElementById("Reading").value;
+        var unit = document.getElementById("unit").value;
+        var bill_month = document.getElementById("bill_month").value;
+        var fine = document.getElementById("fine").value;
+        var account = document.getElementById("selectAccount").value;
+        var transaction_id = document.getElementById("transactionId").value;
+        var services = document.getElementById("selectServices").value;
 
-            return allFieldsFilled;
-        }
+        // Pass all form data including the selected issue to the server-side function
+        // Replace this line with your actual submission function
+        // google.script.run.userClicked(year, pick_date, reading, unit, bill_month, fine, account, transaction_id, services);
 
-        function doStuff() {
-            var year = document.getElementById("selectYear").value;
-            var pick_date = document.getElementById("pick_date").value;
-            var reading = document.getElementById("Reading").value;
-            var unit = document.getElementById("unit").value;
-            var bill_month = document.getElementById("bill_month").value;
-            var fine = document.getElementById("fine").value;
-            var account = document.getElementById("selectAccount").value;
-            var transaction_id = document.getElementById("transactionId").value;
-            var services = document.getElementById("selectServices").value;
-
-            // Pass all form data including the selected issue to the server-side function
-            // Replace this line with your actual submission function
-            // google.script.run.userClicked(year, pick_date, reading, unit, bill_month, fine, account, transaction_id, services);
-
-            // Clear the input fields after submission
-            document.getElementById("selectYear").value = "";
-            document.getElementById("pick_date").value = "";
-            document.getElementById("Reading").value = "";
-            document.getElementById("unit").value = "";
-            document.getElementById("bill_month").value = "";
-            document.getElementById("fine").value = "";
-            document.getElementById("selectAccount").value = "";
-            document.getElementById("transactionId").value = "";
-            document.getElementById("selectServices").value = "";
-        }
-    </script>
+        // Clear the input fields after submission
+        document.getElementById("selectYear").value = "";
+        document.getElementById("pick_date").value = "";
+        document.getElementById("Reading").value = "";
+        document.getElementById("unit").value = "";
+        document.getElementById("bill_month").value = "";
+        document.getElementById("fine").value = "";
+        document.getElementById("selectAccount").value = "";
+        document.getElementById("transactionId").value = "";
+        document.getElementById("selectServices").value = "";
+    }
+</script>
 
 
 

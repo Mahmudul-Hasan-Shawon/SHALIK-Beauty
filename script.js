@@ -45,11 +45,11 @@ function updateCart() {
     }
     let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
     total += deliveryCharge;
-    $('.navbar-nav .cart-badge').text(cart.length);
-    $('.navbar-nav .cart-total').text(total.toFixed(0) + ' ৳');
+    $('.cart-badge').text(cart.length);
+    $('.cart-total').text(total.toFixed(2) + ' ৳');
     
     // Update subtotal in the frontend
-    $('.subtotal-value').text(subTotal.toFixed(0) + ' ৳');
+    $('.subtotal-value').text(subTotal.toFixed(2) + ' ৳');
     
     displayCart();
 }
