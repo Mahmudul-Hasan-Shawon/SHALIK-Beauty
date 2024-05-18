@@ -1,110 +1,447 @@
-let cart = [];
-let total = 0;
-let deliveryChargeInsideDhaka = 60;
-let deliveryChargeOutsideDhaka = 120; // Assuming outside Dhaka charge is different
 
-function addToCart(productId) {
-    const productPrices = {
-        1: 10,
-        2: 20,
-        3: 30,
-        4: 40,
-        5: 50,
-        6: 60,
-        7: 70,
-        8: 80,
-        9: 90,
-        10: 100,
-        11: 110,
-        12: 120,
-    };
-    const productPrice = productPrices[productId] || 0;
-    cart.push({ id: productId, price: productPrice, quantity: 1 });
-    updateCart();
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
 
-// function updateCart() {
-//     total = 0;
-//     for (let i = 0; i < cart.length; i++) {
-//         total += cart[i].price * cart[i].quantity;
-//     }
-//     let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
-//     total += deliveryCharge;
-//     $('.navbar-nav .cart-badge').text(cart.length);
-//     $('.navbar-nav .cart-total').text('$' + total.toFixed(2));
-//     displayCart();
-// }
+.navbar-nav 
+.cart-badge {
+    position: absolute;
+    top: 10;
+    right: 10;
+    background-color: #008cff;
+    color: white;
+    height: 30px;
+    width: 30px;
+    padding-top: 2px;
+    text-align: center;
+    border-radius: 50%;
+    /*padding: 10px 12px;
+    *//*border-radius: 50%;
+    /*margin-top: 2px;
+    */;
+}
 
-function updateCart() {
-    total = 0;
-    let subTotal = 0; // Initialize subtotal to zero
-    for (let i = 0; i < cart.length; i++) {
-        total += cart[i].price * cart[i].quantity;
-        subTotal += cart[i].price * cart[i].quantity; // Add each item's total price to subtotal
+#bor{
+    border: none;
+}
+
+.navbar-nav .cart-total {
+    margin-left: 50px;
+}
+
+
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px 8px 0px 0px;
+    -webkit-border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+    -ms-border-radius: 8px 8px 0px 0px;
+    -o-border-radius: 8px 8px 0px 0px;
+}
+
+.product-card .card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.product-card .card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #141414;
+}
+
+.product-card .card-text {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.cart-container {
+    margin-top: 50px;
+}
+
+.cart-container h2 {
+    margin-bottom: 30px;
+}
+
+.cart-container .table {
+    width: 100%;
+}
+
+.cart-container .table th,
+.cart-container .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.cart-container .table th {
+    background-color: #ddd;
+}
+
+.cart-container .table .actions {
+    width: 100px;
+}
+
+.cart-container .table .actions button {
+    width: 100%;
+}
+
+.cart{
+    border: 2px solid greenyellow;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+
+
+
+.button {
+    display: inline-block;
+    background-color: #15012c;
+    color: white;
+    border: none;
+    padding: 7px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: ease-in-out 0.3s;
+    margin: 10px 0;
+    margin-top: auto;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.button:hover {
+    background-color: #00ce7f;
+    color: white;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+
+}
+
+.button.selected {
+    background-color: #00dd88;
+}
+
+.button-submit {
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    transition: ease-in-out 0.3s;
+    
+}
+
+.button-submit:hover {
+    background-color: #00dd88;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    transition: ease-in-out 0.3s;
+ 
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: ease-in-out 0.4s;
+    border: none;
+}
+
+
+.card_place_order {
+  
+
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    transition: ease-in-out 0.4s;
+    border: none;
+}
+
+
+.card_place_order:hover {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transition: ease-in-out 0.4s;
+    -webkit-transition: ease-in-out 0.4s;
+    -moz-transition: ease-in-out 0.4s;
+    -ms-transition: ease-in-out 0.4s;
+    -o-transition: ease-in-out 0.4s;
+}
+
+
+
+
+.card:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: ease-in-out 0.4s;
+    -webkit-transition: ease-in-out 0.4s;
+    -moz-transition: ease-in-out 0.4s;
+    -ms-transition: ease-in-out 0.4s;
+    -o-transition: ease-in-out 0.4s;
+}
+
+.form-control:focus,
+.form-select-sm:focus {
+    color: #ffffff;
+    box-shadow: none;
+    border-color: #6e34f4;
+    box-shadow: 0 0px 5.5px #e3d7ff;
+    transition: ease-in-out 0.2s;
+    -webkit-transition: ease-in-out 0.2s;
+    -moz-transition: ease-in-out 0.2s;
+    -ms-transition: ease-in-out 0.2s;
+    -o-transition: ease-in-out 0.2s;
+}
+
+
+.custom-button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 3px;
+    transition: ease-in-out 0.3s;
+}
+
+.custom-button:hover {
+    background-color: #00dd88;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 3px;
+    transition: ease-in-out 0.3s;
+    -webkit-transition: ease-in-out 0.3s;
+    -moz-transition: ease-in-out 0.3s;
+    -ms-transition: ease-in-out 0.3s;
+    -o-transition: ease-in-out 0.3s;
+}
+
+.custom-button.selected {
+    background-color: #00dd88;
+    color: white;
+
+}
+
+.name{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.po{
+    padding-right: 20px;
+    justify-content: space-evenly;
+}
+
+
+/* styles.css */
+#account_number, #transactionId::placeholder {
+    opacity: 0.5;
+}
+
+
+
+/*  shine effect*/
+
+  
+.shalik_shine {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ffffff, #ff3298, #ffffff);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate 4s linear infinite;
+    -webkit-animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
     }
-    let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
-    total += deliveryCharge;
-    $('.cart-badge').text(cart.length);
-    $('.cart-total').text(total.toFixed(2) + '৳');
-    
-    // Update subtotal in the frontend
-    $('.subtotal-value').text(subTotal.toFixed(2) + '৳');
-    
-    displayCart();
-}
-
-
-
-
-function updateQuantity(index, newQuantity) {
-    cart[index].quantity = parseInt(newQuantity);
-    updateCart();
-}
-
-
-
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-function hideCart() {
-    $('#cart-container').hide();
-}
-
-function updateDeliveryCharge() {
-    let selectedLocation = $('#delivery-location').val();
-    let deliveryCharge = (selectedLocation === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
-    $('.delivery-charge').text(deliveryCharge.toFixed(2) + '৳');
-    updateCart();
-}
-
-// Call updateCart initially to set default delivery charge
-updateCart();
-
-
-
-
-function displayCart() {
-    $('#cart-container').show();
-    let cartItems = '';
-    for (let i = 0; i < cart.length; i++) {
-        let productName = $(`[data-id="${cart[i].id}"]`).text();
-        cartItems += `
-            <tr>
-                <td>${productName}</td>
-                <td>${cart[i].price.toFixed(2)} ৳</td>
-                <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)"></td>
-                <td>${(cart[i].price * cart[i].quantity).toFixed(2)} ৳</td>
-                <td>
-                    <button class="btn btn-danger" onclick="removeFromCart(${i})">Remove</button>
-                </td>
-            </tr>
-        `;  
+    100% {
+        background-position: 500%;
     }
-    $('#cart-items').html(cartItems);
+}
+
+
+.navbar{
+    background-color: #ffffff;
+    box-shadow: rgba(27, 31, 35, 0.089) 0px 5px 10px -5px, rgba(24, 5, 49, 0.185) 0px 1px 0px inset;
+}
+
+
+.footer{
+    background-color: rgb(21, 1, 44);
+    color: white;
+}
+
+
+
+.map{
+    width: 100%;
+    height: 600px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ .ico-box{
+    background-color: #cb8cff7e;
+    border: none;
+    border-radius: 100%;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    transition: ease-in-out 0.4s;
+    border-radius: 2px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+ .ico-box:hover{
+    background-color: #9900ff;
+    border: none;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    transition: ease-in-out 0.4s;
+    -webkit-transition: ease-in-out 0.4s;
+    -moz-transition: ease-in-out 0.4s;
+    -ms-transition: ease-in-out 0.4s;
+    -o-transition: ease-in-out 0.4s;
+}
+ 
+ .footer-text{
+    color: rgb(217, 184, 255);
+    transition: ease-in-out 0.4s;
+ }
+ .footer-text:hover{
+    color: #b24fff;
+    transition: ease-in-out 0.4s;
+    cursor: pointer;
+    -webkit-transition: ease-in-out 0.4s;
+    -moz-transition: ease-in-out 0.4s;
+    -ms-transition: ease-in-out 0.4s;
+    -o-transition: ease-in-out 0.4s;
+}
+ 
+ 
+ 
+ .icon{
+    color: #410981;
+    font-size: 4rem;
+    transition: ease-in-out 0.4s;
     
-    // Update total in the frontend
-    $('.cart-total-value').text(total.toFixed(2) + '৳' );
+
+    
+ }
+
+ 
+ 
+ 
+ 
+ .circle-box {
+ background-color: white;
+ height: 150px;
+ width: 150px;
+ border-radius: 100%;
+ }
+ 
+ 
+ 
+
+ .service{
+    background-color: #f9f2ff;
+ }
+
+ .payment-services-logo{
+    width: 85px;
+    height:80px;
+
+ }
+
+
+ .old-price{
+    text-decoration: line-through;
+    color: #b6b6b6;
+ }
+ .new-price{
+    color: rgb(0, 0, 0);
+ }
+
+
+ .product-price{
+    margin-top: auto;
+ }
+
+ .weight{
+    color: #da61ff;
+    font-size: 0.9rem;
+ }
+
+
+ .offcanvasNavbar{
+    transition: ease-in-out 5.4s;
+    -webkit-transition: ease-in-out 5.4s;
+    -moz-transition: ease-in-out 5.4s;
+    -ms-transition: ease-in-out 5.4s;
+    -o-transition: ease-in-out 5.4s;
+}
+
+
+.cart-button{
+    border: none;
+    background-color: white;
+}
+
+.quantity-input {
+    width: 100px;
+    border: none;
+    text-align: center;
+}
+.subtotal {
+    width: 100px;
+}
+.product-name {
+    width: 300px;
+}
+
+.price-table{
+    width: 100px;
 }
