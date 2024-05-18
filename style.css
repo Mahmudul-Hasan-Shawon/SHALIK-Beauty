@@ -414,3 +414,12 @@ body {
     color: #da61ff;
     font-size: 0.9rem;
  }
+
+
+ .offcanvasNavbar{
+    transition: ease-in-out 5.4s;
+    -webkit-transition: ease-in-out 5.4s;
+    -moz-transition: ease-in-out 5.4s;
+    -ms-transition: ease-in-out 5.4s;
+    -o-transition: ease-in-out 5.4s;
+}
