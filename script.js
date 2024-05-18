@@ -37,9 +37,9 @@ function addToCart(productId) {
     
     updateCart();
 
-    // Show the cart modal
-    let cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
-    cartModal.show();
+    // Show the cart modal this will show when product added into cart
+    // let cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+    // cartModal.show();
 }
 
 function updateCart() {
@@ -97,3 +97,15 @@ function updateDeliveryCharge() {
 
 // Call updateCart initially to set default delivery charge
 updateCart();
+
+
+
+function showCheckout() {
+    document.getElementById('cart-content').style.display = 'none';
+    document.getElementById('checkout-form').style.display = 'block';
+}
+
+function hideCart() {
+    document.getElementById('cart-content').style.display = 'block';
+    document.getElementById('checkout-form').style.display = 'none';
+}

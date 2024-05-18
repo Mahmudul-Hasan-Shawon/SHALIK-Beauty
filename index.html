@@ -373,11 +373,12 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="cartModalLabel">Cart</h5>
+                <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="container">
+                <!-- Cart Content -->
+                <div id="cart-content">
                     <table class="table">
                         <thead>
                             <tr>
@@ -411,32 +412,149 @@
                     </table>
 
                     <div class="container delivery-container mt-3">
-
                         <div class="row row-cols-4 gy-4 pt-5">
-                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6">
-                                <label  for="delivery-location">Delivery Location:</label>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-4">
+                                <label for="delivery-location">Delivery Location:</label>
                                 <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
                                     <option value="inside">Inside Dhaka</option>
                                     <option value="outside">Outside Dhaka</option>
                                 </select>
-
                             </div>
-                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6 pt-4">
-                                <button class="button w-10" data-bs-dismiss="modal">Continue Shopping</button>
 
+
+                            
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-4 pt-4">
+                                <button class="button w-10" data-bs-dismiss="modal">Continue Shopping</button>
+                            </div>
+
+
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-4 pt-4">
+                                <button class="button w-10" onclick="showCheckout()">Checkout</button>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkout Form -->
+                <div id="checkout-form" style="display: none;">
+                    <div class="container pb-5">
+                        <div id="cart-content">
+                            <table class="table">
+                                <!-- <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Unit Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th></th>
+                                    </tr>
+                                </thead> -->
+                                <tbody id="cart-items">
+                                    <!-- Cart items will be inserted here -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" class="text-end">Subtotal:</td>
+                                        <td class="subtotal-value">0 ৳</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-end">Delivery charges:</td>
+                                        <td class="delivery-charge">60.00৳</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-end">Total:</td>
+                                        <td class="cart-total-value">0৳</td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            
+        
+                            
+                        </div>
+                        
+                        
+                        <div class="row row-cols-4 gy-4 pt-5">
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                                <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control text-black" id="first_name" required />
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                                <label for="last_name" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control text-black" id="last_name" required />
                             </div>
                         </div>
-
-
-
+                        <div class="row row-cols-4 gy-4 pt-4">
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                                <label for="phone_number" class="form-label">Contact number <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control text-black" id="phone_number" required />
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                                <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control text-black" id="address" required />
+                            </div>
+                        </div>
+                        <div class="row row-cols-4 gy-4 pt-4">
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
+                                <label class="form-label" for="delivery-location">Delivery Location:</label>
+                                <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
+                                    <option value="inside">Inside Dhaka</option>
+                                    <option value="outside">Outside Dhaka</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
+                                <label class="form-label">Services <span class="text-danger">*</span></label>
+                                <select id="selectServices" class="form-select" aria-label="Select Service" required>
+                                    <option selected disabled>Select an option</option>
+                                    <option value="Service_CashOnDelivery">Cash On Delivery</option>
+                                    <option value="Service_bkash">Bkash</option>
+                                    <option value="Service_rocket">Rocket</option>
+                                    <option value="Service_nexus_pay">Nexus Pay</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
+                                <label for="account_number" class="form-label">Account number</label>
+                                <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX" id="account_number" required />
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
+                                <label for="transaction_id" class="form-label">Transaction ID</label>
+                                <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId" required />
+                            </div>
+                        </div>
+                        <div class="row row-cols-4 gy-4 pt-5">
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                                <button class="button" onclick="hideCart()">Get back</button>
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
+                                <button type="submit" class="button" style="font-weight: 500;">PLACE ORDER</button>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -812,7 +930,7 @@
                     <div class="col p-0  mx-2" style="list-style-type: none;">
                         <li class="pt-4 footer-text"> > Contact us</li>
                         <li class="pt-4 footer-text"> > Our Process</li>
-                        <li class="pt-4 footer-text"> > FAQ </li>
+                        <a href="./faq.html"><li class="pt-4 footer-text"> > FAQ </li></a>
                         <li class="pt-4 footer-text"> > Department</li>
 
                     </div>
