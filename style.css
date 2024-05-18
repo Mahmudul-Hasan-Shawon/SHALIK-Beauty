@@ -423,3 +423,25 @@ body {
     -ms-transition: ease-in-out 5.4s;
     -o-transition: ease-in-out 5.4s;
 }
+
+
+.cart-button{
+    border: none;
+    background-color: white;
+}
+
+.quantity-input {
+    width: 100px;
+    border: none;
+    text-align: center;
+}
+.subtotal {
+    width: 100px;
+}
+.product-name {
+    width: 300px;
+}
+
+.price-table{
+    width: 100px;
+}
