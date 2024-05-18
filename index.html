@@ -78,9 +78,10 @@
             <div class="d-flex align-items-center ms-auto">
                 <!-- Cart Icon with Badge -->
                 <a class="nav-link position-relative me-3" href="#">
-                    <button class="cart-button" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fa-solid fa-basket-shopping"></i></i></button>
+                    <button class="cart-button" data-bs-toggle="modal" data-bs-target="#cartModal"><i
+                            class="fa-solid fa-basket-shopping"></i></i></button>
 
-                    
+
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill c-badge">
                         <span class="cart-badge">0</span>
                         <span class="visually-hidden">unread messages</span>
@@ -370,58 +371,72 @@
 <!-- Cart Modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Cart</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="container">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Unit Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="cart-items">
-                <!-- Cart items will be inserted here -->
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td colspan="3" class="text-end">Subtotal:</td>
-                  <td class="subtotal-value">0 ৳</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="text-end">Delivery charges:</td>
-                  <td class="delivery-charge">60.00৳</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td colspan="3" class="text-end">Total:</td>
-                  <td class="cart-total-value">0৳</td>
-                  <td></td>
-                </tr>
-              </tfoot>
-            </table>
-            <div class="container delivery-container mt-3">
-              <label for="delivery-location">Delivery Location:</label>
-              <select class="form-label" id="delivery-location" onchange="updateDeliveryCharge()">
-                <option value="inside">Inside Dhaka</option>
-                <option value="outside">Outside Dhaka</option>
-              </select>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <button class="button w-50" data-bs-dismiss="modal">Continue Shopping</button>
-            
-          </div>
+            <div class="modal-body">
+                <div class="container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Unit Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                            <!-- Cart items will be inserted here -->
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-end">Subtotal:</td>
+                                <td class="subtotal-value">0 ৳</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-end">Delivery charges:</td>
+                                <td class="delivery-charge">60.00৳</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-end">Total:</td>
+                                <td class="cart-total-value">0৳</td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="container delivery-container mt-3">
+
+                        <div class="row row-cols-4 gy-4 pt-5">
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6">
+                                <label  for="delivery-location">Delivery Location:</label>
+                                <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
+                                    <option value="inside">Inside Dhaka</option>
+                                    <option value="outside">Outside Dhaka</option>
+                                </select>
+
+                            </div>
+                            <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6 pt-4">
+                                <button class="button w-10" data-bs-dismiss="modal">Continue Shopping</button>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -477,10 +477,18 @@ body {
 }
 
 
-
+#delivery-location{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    height: 38px;
+}
 
 
 .fa-basket-shopping{
     font-size: 22px;
     color: #891adf;
+   
 }
