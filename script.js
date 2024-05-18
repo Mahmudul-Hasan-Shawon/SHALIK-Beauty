@@ -69,7 +69,7 @@ function displayCart() {
                 <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)" class="quantity-input"></td>
                 <td class="subtotal">${(cart[i].price * cart[i].quantity).toFixed(2)} ৳</td>
                 <td>
-                    <button class="btn btn-danger" onclick="removeFromCart(${i})">Remove</button>
+                    <button class="btn-x-mark" onclick="removeFromCart(${i})" class="btn-fa-xmark"><i class="fa-solid fa-xmark"></i></button>
                 </td>
             </tr>
         `;
