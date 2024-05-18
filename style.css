@@ -396,3 +396,16 @@ body {
 
  }
 
+
+ .old-price{
+    text-decoration: line-through;
+    color: #b6b6b6;
+ }
+ .new-price{
+    color: rgb(0, 0, 0);
+ }
+
+
+ .product-price{
+    margin-top: auto;
+ }
