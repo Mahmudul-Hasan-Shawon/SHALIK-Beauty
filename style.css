@@ -409,3 +409,8 @@ body {
  .product-price{
     margin-top: auto;
  }
+
+ .weight{
+    color: #da61ff;
+    font-size: 0.9rem;
+ }
