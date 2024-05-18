@@ -78,10 +78,10 @@
             <div class="d-flex align-items-center ms-auto">
                 <!-- Cart Icon with Badge -->
                 <a class="nav-link position-relative me-3" href="#">
-                    <button class="cart-button" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="bi bi-cart"></i></button>
+                    <button class="cart-button" data-bs-toggle="modal" data-bs-target="#cartModal"><i class="fa-solid fa-basket-shopping"></i></i></button>
 
                     
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill c-badge">
                         <span class="cart-badge">0</span>
                         <span class="visually-hidden">unread messages</span>
                     </span>
@@ -410,12 +410,13 @@
             </table>
             <div class="container delivery-container mt-3">
               <label for="delivery-location">Delivery Location:</label>
-              <select id="delivery-location" onchange="updateDeliveryCharge()">
+              <select class="form-label" id="delivery-location" onchange="updateDeliveryCharge()">
                 <option value="inside">Inside Dhaka</option>
                 <option value="outside">Outside Dhaka</option>
               </select>
             </div>
-            <button class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+            <button class="button w-50" data-bs-dismiss="modal">Continue Shopping</button>
+            
           </div>
         </div>
       </div>
