@@ -36,10 +36,13 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
-    </style>
 
+        .form-control:focus {
+            border-color: #de71ff;
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+            transition: 0.4s ease-in-out;
+        } 
 
-    <style>
         .offcanvas-start {
             width: 250px;
         }
@@ -48,11 +51,6 @@
             font-size: 1.5rem;
         }
     </style>
-
-
-
-
-
 
 
 
@@ -571,19 +569,18 @@
 
 
 
-<div class="container-fluid" style="background-color: rgb(255, 255, 255);">
+<!-- <div class="container-fluid" style="background-color: rgb(255, 255, 255);">
     <h1 class="text-center shalik_shine pt-5">SHALIK GLOW CORNER</h1>
-</div>
+</div> -->
 <!-- HEADING END -->
 
-<div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
+<!-- <div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
 
 
-    <!-- CARD : 1 START -->
+
     <div class="row card_place_order pt-5 pb-5 p-4">
 
 
-        <!-- Name -->
         <div class="container pb-5">
             <div class="row row-cols-4 gy-4 pt-5">
                 <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
@@ -646,7 +643,7 @@
                 <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                     <label for="Address" class="form-label">
                         Account number
-                        <!-- <span class="text-danger"></span> -->
+        
                     </label>
                     <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX" id="account_number"
                         required />
@@ -655,7 +652,7 @@
                 <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                     <label for="transaction_id" class="form-label">
                         Transaction ID
-                        <!-- <span class="text-danger">*</span> -->
+               
                     </label>
                     <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId"
                         required />
@@ -817,7 +814,7 @@
     </div>
 
 
-</div>
+</div> -->
 
 
 
@@ -924,11 +921,12 @@
                     <div class="col-12 col-lg-6 col-md-6 p-0 mx-2 " style="list-style-type: none;">
                         <li class="pt-4 footer-text"> > About us</li>
                         <li class="pt-4 footer-text"> > Our Services</li>
-                        <li class="pt-4 footer-text"> > Text 1</li>
+                        <a style="text-decoration: none;" href="./index.html"><li class="pt-4 footer-text"> > Our Products </li></a>
                         <li class="pt-4 footer-text"> > Events</li>
                     </div>
                     <div class="col p-0  mx-2" style="list-style-type: none;">
-                        <li class="pt-4 footer-text"> > Contact us</li>
+                        <a style="text-decoration: none;" href="./contact_us.html"><li class="pt-4 footer-text"> > Contact us </li></a>
+                        
                         <li class="pt-4 footer-text"> > Our Process</li>
                         <a style="text-decoration: none;" href="./faq.html"><li class="pt-4 footer-text"> > FAQ </li></a>
                         <li class="pt-4 footer-text"> > Department</li>
