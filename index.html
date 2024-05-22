@@ -384,6 +384,8 @@
 </div>
 
 <!-- Cart Modal -->
+<!-- Cart Modal -->
+<!-- Cart Modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -399,8 +401,8 @@
                             <tr>
                                 <th>Product</th>
                                 <th>Unit Price</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
+                                <th style="width: 100px;">Quantity</th>
+                                <th style="width: 100px;">Total</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -413,43 +415,17 @@
                                 <td class="subtotal-value">0 ৳</td>
                                 <td></td>
                             </tr>
-                            <!-- <tr>
-                                <td colspan="3" class="text-end">Delivery charges:</td>
-                                <td class="delivery-charge">0.00৳</td>
-                                <td></td>
-                            </tr> -->
-                            <!-- <tr>
-                                <td colspan="3" class="text-end">Total:</td>
-                                <td class="cart-total-value">0৳</td>
-                                <td></td>
-                            </tr> -->
                         </tfoot>
                     </table>
 
                     <div class="container delivery-container mt-3">
                         <div class="row row-cols-4 gy-4 pt-5">
-                            <!-- <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-4">
-                                <label for="delivery-location">Delivery Location:</label>
-                                <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
-                                    <option value="inside">Inside Dhaka</option>
-                                    <option value="outside">Outside Dhaka</option>
-                                </select>
-                            </div> -->
-
-
-                            
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6 pt-4">
                                 <button class="button w-10" data-bs-dismiss="modal">Continue Shopping</button>
                             </div>
-
-
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6 pt-4">
-                                <button class="button w-10" onclick="showCheckout()">Checkout</button>
+                                <button class="button w-10" id="checkout-button" onclick="showCheckout()" style="display: none;">Checkout</button>
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </div>
@@ -459,15 +435,6 @@
                     <div class="container pb-5">
                         <div id="cart-content">
                             <table class="table">
-                                <!-- <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Unit Price</th>
-                                        <th>Quantity</th>
-                                        <th>Total</th>
-                                        <th></th>
-                                    </tr>
-                                </thead> -->
                                 <tbody id="cart-items">
                                     <!-- Cart items will be inserted here -->
                                 </tbody>
@@ -489,13 +456,8 @@
                                     </tr>
                                 </tfoot>
                             </table>
-
-                            
-        
-                            
                         </div>
-                        
-                        
+
                         <div class="row row-cols-4 gy-4 pt-5">
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
                                 <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
@@ -520,8 +482,8 @@
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                                 <label class="form-label" for="delivery-location">Delivery Location:</label>
                                 <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
-                                    <option value="Inside Dhaka">Inside Dhaka</option>
-                                    <option value="Outside Dhaka">Outside Dhaka</option>
+                                    <option value="inside">Inside Dhaka</option>
+                                    <option value="outside">Outside Dhaka</option>
                                 </select>
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
@@ -557,6 +519,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 

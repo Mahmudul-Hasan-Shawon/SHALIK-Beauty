@@ -36,10 +36,6 @@ function addToCart(productId) {
     }
     
     updateCart();
-
-    // Show the cart modal this will show when product added into cart
-    // let cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
-    // cartModal.show();
 }
 
 function updateCart() {
@@ -55,6 +51,13 @@ function updateCart() {
     $('.cart-total').text(total.toFixed(2) + '৳');
     $('.subtotal-value').text(subTotal.toFixed(2) + '৳');
     
+    // Show or hide checkout button based on subtotal
+    if (subTotal > 0) {
+        $('#checkout-button').show();
+    } else {
+        $('#checkout-button').hide();
+    }
+
     displayCart();
 }
 
@@ -69,7 +72,7 @@ function displayCart() {
                 <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)" class="quantity-input"></td>
                 <td class="subtotal">${(cart[i].price * cart[i].quantity).toFixed(2)} ৳</td>
                 <td>
-                    <button class="btn-x-mark" onclick="removeFromCart(${i})" class="btn-fa-xmark"><i class="fa-solid fa-xmark"></i></button>
+                    <button class="btn-x-mark" onclick="removeFromCart(${i})"><i class="fa-solid fa-xmark"></i></button>
                 </td>
             </tr>
         `;
@@ -97,8 +100,6 @@ function updateDeliveryCharge() {
 
 // Call updateCart initially to set default delivery charge
 updateCart();
-
-
 
 function showCheckout() {
     document.getElementById('cart-content').style.display = 'none';
