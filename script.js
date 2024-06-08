@@ -45,17 +45,17 @@ function updateCart() {
         total += cart[i].price * cart[i].quantity;
         subTotal += cart[i].price * cart[i].quantity;
     }
-    let deliveryCharge = ($('#delivery-location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
+    let deliveryCharge = ($('#delivery_location').val() === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
     total += deliveryCharge;
-    $('.cart-badge').text(cart.length);
-    $('.cart-total').text(total.toFixed(2) + '৳');
-    $('.subtotal-value').text(subTotal.toFixed(2) + '৳');
+    $('.cart_badge').text(cart.length);
+    $('.cart_total').text(total.toFixed(2) + '৳');
+    $('.subtotal_value').text(subTotal.toFixed(2) + '৳');
     
     // Show or hide checkout button based on subtotal
     if (subTotal > 0) {
-        $('#checkout-button').show();
+        $('#checkout_button').show();
     } else {
-        $('#checkout-button').hide();
+        $('#checkout_button').hide();
     }
 
     displayCart();
@@ -67,9 +67,9 @@ function displayCart() {
         let productName = $(`[data-id="${cart[i].id}"]`).text();
         cartItems += `
             <tr>
-                <td class="product-name">${productName}</td>
-                <td class="price-table">${cart[i].price.toFixed(2)} ৳</td>
-                <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)" class="quantity-input"></td>
+                <td class="product_name">${productName}</td>
+                <td class="price_table">${cart[i].price.toFixed(2)} ৳</td>
+                <td><input type="number" min="1" value="${cart[i].quantity}" onchange="updateQuantity(${i}, this.value)" class="quantity_input"></td>
                 <td class="subtotal">${(cart[i].price * cart[i].quantity).toFixed(2)} ৳</td>
                 <td>
                     <button class="btn-x-mark" onclick="removeFromCart(${i})"><i class="fa-solid fa-xmark"></i></button>
@@ -77,8 +77,8 @@ function displayCart() {
             </tr>
         `;
     }
-    $('#cart-items').html(cartItems);
-    $('.cart-total-value').text(total.toFixed(2) + '৳');
+    $('#cart_items').html(cartItems);
+    $('.cart_total_value').text(total.toFixed(2) + '৳');
 }
 
 function updateQuantity(index, newQuantity) {
@@ -92,9 +92,9 @@ function removeFromCart(index) {
 }
 
 function updateDeliveryCharge() {
-    let selectedLocation = $('#delivery-location').val();
+    let selectedLocation = $('#delivery_location').val();
     let deliveryCharge = (selectedLocation === 'inside') ? deliveryChargeInsideDhaka : deliveryChargeOutsideDhaka;
-    $('.delivery-charge').text(deliveryCharge.toFixed(2) + '৳');
+    $('.delivery_charge').text(deliveryCharge.toFixed(2) + '৳');
     updateCart();
 }
 
@@ -102,11 +102,11 @@ function updateDeliveryCharge() {
 updateCart();
 
 function showCheckout() {
-    document.getElementById('cart-content').style.display = 'none';
-    document.getElementById('checkout-form').style.display = 'block';
+    document.getElementById('cart_content').style.display = 'none';
+    document.getElementById('checkout_form').style.display = 'block';
 }
 
 function hideCart() {
-    document.getElementById('cart-content').style.display = 'block';
-    document.getElementById('checkout-form').style.display = 'none';
+    document.getElementById('cart_content').style.display = 'block';
+    document.getElementById('checkout_form').style.display = 'none';
 }

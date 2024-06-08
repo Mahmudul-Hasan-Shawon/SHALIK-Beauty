@@ -41,12 +41,13 @@
             border-color: #de71ff;
             box-shadow: 0 0 0 0.2rem #ed64ff00;
             transition: 0.4s ease-in-out;
-        } 
+        }
+
         .form-control:active {
             border-color: #de71ff;
             box-shadow: 0 0 0 0.2rem rgba(255, 145, 209, 0.25);
             transition: 0.4s ease-in-out;
-        } 
+        }
 
         .offcanvas-start {
             width: 250px;
@@ -55,14 +56,16 @@
         .offcanvas-header .btn-close {
             font-size: 1.5rem;
         }
+
         .bootstrap-select .dropdown-toggle:focus {
             border-color: #de71ff;
             box-shadow: 0 0 0 0.2rem rgba(255, 145, 209, 0.25);
             transition: 0.4s ease-in-out;
         }
+
         :focus {
-          outline: none !important;
-          box-shadow: none !important;
+            outline: none !important;
+            box-shadow: none !important;
         }
     </style>
 
@@ -95,14 +98,14 @@
 
 
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill c-badge">
-                        <span class="cart-badge">0</span>
+                        <span class="cart_badge">0</span>
                         <span class="visually-hidden">unread messages</span>
                     </span>
                 </a>
 
                 <!-- Cart Total Display -->
                 <div>
-                    <span class="cart-total subtotal-value">0.00৳</span>
+                    <span class="cart-total subtotal_value">0.00৳</span>
                 </div>
             </div>
         </div>
@@ -117,13 +120,16 @@
         <div class="offcanvas-body">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a style="text-decoration: none;" href="./index.html"><li class="pt-4 footer-text"> Home </li></a>
+                    <a style="text-decoration: none;" href="./index.html">
+                <li class="pt-4 footer-text"> Home </li></a>
                 </li>
                 <li class="nav-item">
-                    <a style="text-decoration: none;" href="./contact_us.html"><li class="pt-4 footer-text"> Contact us </li></a>
+                    <a style="text-decoration: none;" href="./contact_us.html">
+                <li class="pt-4 footer-text"> Contact us </li></a>
                 </li>
                 <li class="nav-item">
-                    <a style="text-decoration: none;" href="./faq.html"><li class="pt-4 footer-text"> FAQ </li></a>
+                    <a style="text-decoration: none;" href="./faq.html">
+                <li class="pt-4 footer-text"> FAQ </li></a>
                 </li>
             </ul>
         </div>
@@ -395,7 +401,7 @@
             </div>
             <div class="modal-body">
                 <!-- Cart Content -->
-                <div id="cart-content">
+                <div id="cart_content">
                     <table class="table">
                         <thead>
                             <tr>
@@ -406,13 +412,13 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody id="cart-items">
+                        <tbody id="cart_items">
                             <!-- Cart items will be inserted here -->
                         </tbody>
                         <tfoot>
                             <tr>
                                 <td colspan="3" class="text-end">Subtotal:</td>
-                                <td class="subtotal-value">0 ৳</td>
+                                <td class="subtotal_value">0 ৳</td>
                                 <td></td>
                             </tr>
                         </tfoot>
@@ -424,34 +430,35 @@
                                 <button class="button w-10" data-bs-dismiss="modal">Continue Shopping</button>
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-6 col-lg-6 pt-4">
-                                <button class="button w-10" id="checkout-button" onclick="showCheckout()" style="display: none;">Checkout</button>
+                                <button class="button w-10" id="checkout_button" onclick="showCheckout()"
+                                    style="display: none;">Checkout</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Checkout Form -->
-                <div id="checkout-form" style="display: none;">
+                <div id="checkout_form" style="display: none;">
                     <div class="container pb-5">
-                        <div id="cart-content">
+                        <div id="cart_content">
                             <table class="table">
-                                <tbody id="cart-items">
+                                <tbody id="cart_items">
                                     <!-- Cart items will be inserted here -->
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <td colspan="3" class="text-end">Subtotal:</td>
-                                        <td class="subtotal-value">0 ৳</td>
+                                        <td class="subtotal_value">0 ৳</td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text-end">Delivery charges:</td>
-                                        <td class="delivery-charge">60.00৳</td>
+                                        <td class="delivery_charge">60.00৳</td>
                                         <td></td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text-end">Total:</td>
-                                        <td class="cart-total-value">0৳</td>
+                                        <td class="cart_total_value">0৳</td>
                                         <td></td>
                                     </tr>
                                 </tfoot>
@@ -460,28 +467,32 @@
 
                         <div class="row row-cols-4 gy-4 pt-5">
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                                <label for="first_name" class="form-label">First Name <span class="text-danger">*</span></label>
+                                <label for="first_name" class="form-label">First Name <span
+                                        class="text-danger">*</span></label>
                                 <input type="text" class="form-control text-black" id="first_name" required />
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                                <label for="last_name" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                <label for="last_name" class="form-label">Last Name <span
+                                        class="text-danger">*</span></label>
                                 <input type="text" class="form-control text-black" id="last_name" required />
                             </div>
                         </div>
                         <div class="row row-cols-4 gy-4 pt-4">
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                                <label for="phone_number" class="form-label">Contact number <span class="text-danger">*</span></label>
+                                <label for="phone_number" class="form-label">Contact number <span
+                                        class="text-danger">*</span></label>
                                 <input type="text" class="form-control text-black" id="phone_number" required />
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                                <label for="address" class="form-label">Address <span class="text-danger">*</span></label>
+                                <label for="address" class="form-label">Address <span
+                                        class="text-danger">*</span></label>
                                 <input type="text" class="form-control text-black" id="address" required />
                             </div>
                         </div>
                         <div class="row row-cols-4 gy-4 pt-4">
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
-                                <label class="form-label" for="delivery-location">Delivery Location:</label>
-                                <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
+                                <label class="form-label" for="delivery_location">Delivery Location:</label>
+                                <select class="form-select" id="delivery_location" onchange="updateDeliveryCharge()">
                                     <option value="inside">Inside Dhaka</option>
                                     <option value="outside">Outside Dhaka</option>
                                 </select>
@@ -498,11 +509,13 @@
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                                 <label for="account_number" class="form-label">Account number</label>
-                                <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX" id="account_number" required />
+                                <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX"
+                                    id="account_number" required />
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
                                 <label for="transaction_id" class="form-label">Transaction ID</label>
-                                <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId" required />
+                                <input type="text" placeholder="AH53XXXXX" class="form-control text-black"
+                                    id="transactionId" required />
                             </div>
                         </div>
                         <div class="row row-cols-4 gy-4 pt-5">
@@ -510,7 +523,7 @@
                                 <button class="button" onclick="hideCart()">Get back</button>
                             </div>
                             <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                                <button type="submit" class="button" style="font-weight: 500;">PLACE ORDER</button>
+                                <button type="submit" class="submit_button" style="font-weight: 500;">PLACE ORDER</button>
                             </div>
                         </div>
                     </div>
@@ -528,15 +541,6 @@
 
 
 
-
-
-
-
-
-
-    
-
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz4fnFO9gybBud7TlRbs/ic4AwGcFZOxg5DpPt8EgeUIgIwzjWfXQKWA3" crossorigin="anonymous"></script>
@@ -544,259 +548,6 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
-
-
-
-
-
-
-
-<!-- <div class="container-fluid" style="background-color: rgb(255, 255, 255);">
-    <h1 class="text-center shalik_shine pt-5">SHALIK GLOW CORNER</h1>
-</div> -->
-<!-- HEADING END -->
-
-<!-- <div class="container pt-5 pb-5 col-12 col-sm-12 col-md-6 col-lg-6 custom-width">
-
-
-
-    <div class="row card_place_order pt-5 pb-5 p-4">
-
-
-        <div class="container pb-5">
-            <div class="row row-cols-4 gy-4 pt-5">
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <label for="first_name" class="form-label">
-                        First Name
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="text" class="form-control text-black" id="first_name" required />
-                </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <label for="first_name" class="form-label">
-                        Last Name
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="text" class="form-control text-black" id="first_name" required />
-                </div>
-            </div>
-
-            <div class="row row-cols-4 gy-4 pt-4">
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <label for="phone_number" class="form-label">
-                        Contact number
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="text" class="form-control text-black" id="first_name" required />
-                </div>
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <label for="Address" class="form-label">
-                        Address
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="text" class="form-control text-black" id="first_name" required />
-                </div>
-            </div>
-
-
-            <div class="row row-cols-4 gy-4 pt-4">
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
-                    <label class="form-label" for="delivery-location">Delivery Location:</label>
-                    <select class="form-select" id="delivery-location" onchange="updateDeliveryCharge()">
-                        <option value="inside">Inside Dhaka</option>
-                        <option value="outside">Outside Dhaka</option>
-                    </select>
-                </div>
-
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
-                    <label class="form-label">
-                        Services
-                        <span class="text-danger">*</span>
-                    </label>
-                    <select id="selectServices" class="form-select" aria-label="Select Service" required>
-                        <option selected disabled>Select an option</option>
-                        <option value="Service_CashOnDelivery">Cash On Delivery</option>
-                        <option value="Service_bkash">Bkash</option>
-                        <option value="Service_rocket">Rocket</option>
-                        <option value="Service_nexus_pay">Nexus Pay</option>
-                    </select>
-                </div>
-
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
-                    <label for="Address" class="form-label">
-                        Account number
-        
-                    </label>
-                    <input type="text" class="form-control text-black" placeholder="+88 01XXXXXXXXX" id="account_number"
-                        required />
-                </div>
-
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-3">
-                    <label for="transaction_id" class="form-label">
-                        Transaction ID
-               
-                    </label>
-                    <input type="text" placeholder="AH53XXXXX" class="form-control text-black" id="transactionId"
-                        required />
-                </div>
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-            <div class="row row-cols-4 gy-4 pt-5">
-
-
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <button class="button" onclick="hideCart()">Continue Shopping</button>
-                </div>
-
-                <div class="col-12 col-xs-12 cols-sm-12 col-md-12 col-lg-6">
-                    <button type="submit" class="button" style="font-weight: 500;">PLACE ORDER</button>
-                </div>
-            </div>
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="pt-4">
-                <div class="col">
-                    <label for="claim_number" class="form-label">
-                        Reading value
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="number" class="form-control text-black" id="Reading" required />
-                </div>
-            </div>
-
-         
-            <div class="pt-4">
-                <div class="col">
-                    <label for="unit" class="form-label">
-                        Unit
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="number" class="form-control text-black" id="unit" required />
-                </div>
-            </div>
-
-     
-            <div class="pt-4">
-                <div class="col">
-                    <label for="bill_month" class="form-label">
-                        Bill of month (TK)
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="number" class="form-control text-black" id="bill_month" required />
-                </div>
-            </div>
-        
-            <div class="pt-4">
-                <div class="col">
-                    <label for="fine" class="form-label">
-                        Fine (TK)
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="number" class="form-control text-black" id="fine" required />
-                </div>
-            </div> -->
-
-
-        <!-- <div class="pt-4">
-                <div class="col">
-                    <label class="form-label">
-                        SMS Account no.
-                        <span class="text-danger">*</span>
-                    </label>
-
-                    <select id="selectAccount" class="form-select form-label" aria-label="Select Account" required>
-                        <option selected disabled>Select an account</option>
-                        <option value="SMS_acc_1">10690766355111</option>
-                        <option value="SMS_acc_2">1069086635511</option>
-                    </select>
-
-                    <script>
-                        $(document).ready(function() {
-                            $('#selectAccount').select2();
-                        });
-                    </script>
-
-
-                    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
-                        rel="stylesheet" />
-
-
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-
-
-                </div>
-            </div> -->
-
-
-        <!-- <div class="pt-4">
-                <div class="col">
-                    <label for="transaction_id" class="form-label">
-                        Transaction ID
-                        <span class="text-danger">*</span>
-                    </label>
-                    <input type="text" class="form-control text-black" id="transactionId" required />
-                </div>
-            </div>
-            <div class="pt-4">
-                <div class="col">
-                    <label class="form-label">
-                        Services
-                        <span class="text-danger">*</span>
-                    </label>
-                    <select id="selectServices" class="form-select" aria-label="Select Service" required>
-                        <option selected disabled>Select an option</option>
-                        <option value="Service_bkash">Bkash</option>
-                        <option value="Service_rocket">Rocket</option>
-                        <option value="Service_nexus_pay">Nexus Pay</option>
-                    </select>
-                </div>
-            </div> -->
-        <!-- 
-            <div class="row pt-5">
-                <button type="submit" class="button-submit" id="submit_button" style="font-weight: 500;">PLACE ORDER</button>
-            </div> -->
-
-
-
-    </div>
-
-
-</div>
 
 
 
@@ -903,14 +654,20 @@
                     <div class="col-12 col-lg-6 col-md-6 p-0 mx-2 " style="list-style-type: none;">
                         <li class="pt-4 footer-text"> > About us</li>
                         <li class="pt-4 footer-text"> > Our Services</li>
-                        <a style="text-decoration: none;" href="./index.html"><li class="pt-4 footer-text"> > Our Products </li></a>
+                        <a style="text-decoration: none;" href="./index.html">
+                            <li class="pt-4 footer-text"> > Our Products </li>
+                        </a>
                         <li class="pt-4 footer-text"> > Events</li>
                     </div>
                     <div class="col p-0  mx-2" style="list-style-type: none;">
-                        <a style="text-decoration: none;" href="./contact_us.html"><li class="pt-4 footer-text"> > Contact us </li></a>
-                        
+                        <a style="text-decoration: none;" href="./contact_us.html">
+                            <li class="pt-4 footer-text"> > Contact us </li>
+                        </a>
+
                         <li class="pt-4 footer-text"> > Our Process</li>
-                        <a style="text-decoration: none;" href="./faq.html"><li class="pt-4 footer-text"> > FAQ </li></a>
+                        <a style="text-decoration: none;" href="./faq.html">
+                            <li class="pt-4 footer-text"> > FAQ </li>
+                        </a>
                         <li class="pt-4 footer-text"> > Department</li>
 
                     </div>
@@ -990,26 +747,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Bootstrap Bundle JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -1049,15 +786,18 @@
     }
 
     function doStuff() {
-        var year = document.getElementById("selectYear").value;
-        var pick_date = document.getElementById("pick_date").value;
-        var reading = document.getElementById("Reading").value;
-        var unit = document.getElementById("unit").value;
-        var bill_month = document.getElementById("bill_month").value;
-        var fine = document.getElementById("fine").value;
-        var account = document.getElementById("selectAccount").value;
-        var transaction_id = document.getElementById("transactionId").value;
-        var services = document.getElementById("selectServices").value;
+        var firstName = document.getElementById("first_name").value;
+        var lastName = document.getElementById("last_name").value;
+        var contactNumber = document.getElementById("phone_number").value;
+        var address = document.getElementById("address").value;
+        var accountNumber = document.getElementById("account_number").value;
+        var deliveryLocation = document.getElementById("delivery_location").value;
+        var service = document.getElementById("selectServices").value;
+        var transactionId = document.getElementById("transactionId").value;
+        var orderedItems = document.getElementById("selectServices").value;
+        var subtotal = document.getElementById("subtotal_value").value;
+        var deliveryCharge = document.getElementById("delivery_charge").value;
+        var total = document.getElementById("cart_total_value").value;
 
         // Pass all form data including the selected issue to the server-side function
         // Replace this line with your actual submission function
